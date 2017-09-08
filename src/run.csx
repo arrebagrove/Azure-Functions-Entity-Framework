@@ -10,8 +10,6 @@ using System.Data.Entity;
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
     log.Info("C# HTTP trigger function processed a request.");
-
-    string name = "";
     
     dynamic body = await req.Content.ReadAsStringAsync();
     var e = JsonConvert.DeserializeObject<Person>(body as string);
